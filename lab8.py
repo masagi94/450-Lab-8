@@ -19,4 +19,5 @@ with picamera.PiCamera() as camera:
         	camera.capture(stream, format='rgb')
         	pixAverage = int(np.average(stream.array[...,1]))
 		print ("Light Meter pixAverage=%i" % pixAverage)
-		
+
+#
