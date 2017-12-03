@@ -93,17 +93,36 @@ def ServoAngle(angle):
 
 # Will generate a random movement for the robot
 def randomMovement():
-	# Will generate a random angle 
+	# Will generate a random angle between 20 and 100
 	randAngle = randint(20, 100)
-	randDistance = randint(1, 3)
+	randTime = randint(1, 3)
 	randDirection = random()
 
+	# move backwards a random amount of time
+	moveBackward()
+	time.sleep(randTime)
+	stop()
+
+	# Add your stuff here razwan. for the random angles that it will turn
 	if (randDirection == 0):
 		pivotRight()
+		# pivot some angle
+
+		stop()
 	else:
 		pivotLeft()
 
+		# pivot some angle
 
+		stop()
+
+	
+	randTime = randint(1, 3)
+
+	# move forward a random amount of time
+	moveForward()
+	time.sleep(randTime)
+	stop()
 
 # Will scan horizontally to find the light source, and adjust the robot to face it
 def findLight():
@@ -117,7 +136,7 @@ def findLight():
 	        	camera.capture(stream, format='rgb')
 	        	pixAverage = int(np.average(stream.array[...,1]))
 			
-			print ("Light Meter pixAverage=%i" % pixAverage, randAngle)
+			print ("Light sdfsdMeter pixAverage=%i" % pixAverage)
 
 
 
